@@ -88,6 +88,13 @@ The service categorizes risk into three levels:
 
 ## Testing
 
+Recommended!
+
+Use containerfiles/pytest to run the tests to get isolated environment for testing
+Check containerfiles/README.md for more information
+
+Not recommended!
+
 Run tests using pytest:
 ```bash
 pytest tests/
@@ -95,9 +102,8 @@ pytest tests/
 
 ## Coverage
 
-TBD
-
-some issues with sqlite3
+Some issues with sqlite3 vs python binaries I have built by myself so the coverage is also run as container
+Check containerfiles/README.md for more information
 
 ## Design Considerations
 

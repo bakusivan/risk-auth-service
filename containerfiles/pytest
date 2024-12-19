@@ -1,0 +1,19 @@
+# Use the official Python slim image as a base
+FROM python:3.13-slim
+
+# Install necessary dependencies, including libsqlite3-dev
+RUN apt-get update && apt-get install -y \
+    libsqlite3-dev \
+    && apt-get clean
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy your project files into the container
+COPY . /app
+
+# Install your Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Set the default command to run your tests
+CMD ["pytest", "--maxfail=1", "--disable-warnings"]
