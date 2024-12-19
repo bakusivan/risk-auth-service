@@ -93,6 +93,12 @@ Run tests using pytest:
 pytest tests/
 ```
 
+## Coverage
+
+TBD
+
+some issues with sqlite3
+
 ## Design Considerations
 
 - In-memory storage for risk tracking
@@ -102,6 +108,7 @@ pytest tests/
 
 ## Future Improvements
 
+- Building an image and running entire service in container mode
 - Persistent storage integration
 - More granular risk scoring
 - Enhanced logging and monitoring

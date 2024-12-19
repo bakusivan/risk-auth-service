@@ -1,3 +1,4 @@
+import ipaddress
 from datetime import datetime, timedelta
 from typing import Dict
 from ..models.models import RiskValues, LogEntry
@@ -124,10 +125,17 @@ class RiskService:
             failed_login_count_last_week=0
         ))
 
+    '''
     def is_ip_internal(self, ip: str) -> bool:
-        # Replace with your own logic to check if IP is internal
         internal_subnet = "10.97.2.0/24"
         return ip in internal_subnet
+    '''
+    def is_ip_internal(self, ip: str) -> bool:
+        internal_subnet = ipaddress.ip_network("10.97.2.0/24")
+        try:
+            return ipaddress.ip_address(ip) in internal_subnet
+        except ValueError:
+            return False  # Handle invalid IP formats gracefully
 
     def get_failed_login_count_last_week(self):
         total_failed_login_count = 0
