@@ -11,9 +11,9 @@ def log_collector():
 def test_add_log(log_collector):
     # Create a log entry
     log = LogEntry(
-        user="johndoe",
+        username="johndoe",
         device_id="abc123",
-        ip_address="192.168.1.10",
+        ip="192.168.1.10",
         date=date(2024, 12, 19),
         login_success=True
     )
@@ -28,17 +28,17 @@ def test_add_log(log_collector):
 def test_get_logs(log_collector):
     # Add multiple logs
     log1 = LogEntry(
-        user="johndoe",
+        username="johndoe",
         device_id="abc123",
-        ip_address="192.168.1.10",
+        ip="192.168.1.10",
         date=date(2024, 12, 19),
         login_success=True
     )
     
     log2 = LogEntry(
-        user="janedoe",
+        username="janedoe",
         device_id="xyz456",
-        ip_address="192.168.1.11",
+        ip="192.168.1.11",
         date=date(2024, 12, 20),
         login_success=False
     )

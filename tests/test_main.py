@@ -23,10 +23,10 @@ def test_health(client):
 
 def test_create_log(client):
     log_data = {
-        "user": "johndoe1",
+        "username": "johndoe1",
         "device_id": "abc123",
-        "ip_address": "192.168.1.10",
-        "date": "2024-12-19",
+        "ip": "192.168.1.10",
+        "date": "2024-12-19T00:00:00",  # Ensure the date includes time
         "login_success": True
     }
     
@@ -42,25 +42,25 @@ def test_create_log(client):
     
     # Check that the log is present
     assert len(logs) == 1
-    assert logs[0]["user"] == "johndoe1"
+    assert logs[0]["username"] == "johndoe1"
     assert logs[0]["device_id"] == "abc123"
-    assert logs[0]["ip_address"] == "192.168.1.10"
-    assert logs[0]["date"] == "2024-12-19"
+    assert logs[0]["ip"] == "192.168.1.10"
+    assert logs[0]["date"] == "2024-12-19T00:00:00"  # Adjusted to match the datetime format
     assert logs[0]["login_success"] == True
 
 def test_get_logs(client, reset_log_collector):
     log_collector = reset_log_collector
     log_data1 = {
-        "user": "johndoe",
+        "username": "johndoe",
         "device_id": "abc123",
-        "ip_address": "192.168.1.10",
+        "ip": "192.168.1.10",
         "date": "2024-12-19",
         "login_success": True
     }
     log_data2 = {
-        "user": "janedoe",
+        "username": "janedoe",
         "device_id": "xyz456",
-        "ip_address": "192.168.1.11",
+        "ip": "192.168.1.11",
         "date": "2024-12-20",
         "login_success": False
     }
@@ -75,5 +75,5 @@ def test_get_logs(client, reset_log_collector):
     logs = response.json()
 
     assert len(logs) == 2
-    assert logs[0]["user"] == "johndoe"
-    assert logs[1]["user"] == "janedoe"
+    assert logs[0]["username"] == "johndoe"
+    assert logs[1]["username"] == "janedoe"

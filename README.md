@@ -32,13 +32,15 @@ risk-auth-service/
 │
 ├── src/
 │   ├── main.py           # FastAPI application entry point
-│   ├── risk_service.py   # Core risk calculation logic
-│   ├── log_handler.py    # Log processing module
-│   └── models.py         # Data models and type definitions
+│   ├── services/
+│        └── risk_service.py   # Core risk calculation logic
+│        └── log_collector.py    # Log processing module
+│   └── models/
+│        └── models.py         # Data models and type definitions
 │
 ├── tests/
 │   ├── test_risk_service.py
-│   └── test_log_handler.py
+│   └── test_log_collector.py
 │
 ├── requirements.txt
 ├── README.md
@@ -109,3 +111,8 @@ pytest tests/
 - No permanent data storage
 - Simplified risk calculation
 - No authentication for the service itself
+
+
+## Some curl examples
+
+tests/post_logs.sh
