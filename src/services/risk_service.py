@@ -125,11 +125,6 @@ class RiskService:
             failed_login_count_last_week=0
         ))
 
-    '''
-    def is_ip_internal(self, ip: str) -> bool:
-        internal_subnet = "10.97.2.0/24"
-        return ip in internal_subnet
-    '''
     def is_ip_internal(self, ip: str) -> bool:
         internal_subnet = ipaddress.ip_network("10.97.2.0/24")
         try:

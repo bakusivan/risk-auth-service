@@ -77,8 +77,7 @@ async def last_failed_login_date(username: str):
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
 
-# TODO; this is the only thing that doesn't work;
-# also, not sure why total number of failed login attempts is not connected with the username
+# TODO; not sure why total number of failed login attempts is not connected with the username
 # but, it is clear from the "Proposed Solution" that we only need total int
 @app.get("/risk/failedlogincountlastweek")
 async def failed_login_count_last_week():
