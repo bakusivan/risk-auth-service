@@ -75,14 +75,19 @@ uvicorn src.main:app --reload
 ```
 or you can use containerfiles/risk-auth-service to build and run the service inside container
 
-## Endpoints [needs to be updated]
-
+## Endpoints
+git pull ...
 - `POST /log`: Ingest log entries
+- `GET /health`: Check if API calls work
 - `GET /risk/isuserknown`: Check if a user is known
+- `GET risk/isclientknown`: Check if a client is known
 - `GET /risk/isipknown`: Verify IP address history
+- `GET risk/isipinternal`: Verify IP address is internal or external
+- `GET risk/lastsuccessfullogindate`: Last successful login date for given user
+- `GET risk/lastfailedlogindate`: Last failed login date for given user
 - `GET /risk/failedlogincountlastweek`: Retrieve failed login attempts
 
-## Risk Assessment Logic [not applicable]
+## Risk Assessment Logic [this is not part of this scope? Does RiskService needs to handle this also or "Authentication service" takes care of this?]
 
 The service categorizes risk into three levels:
 1. **Low Risk**: Known user, known device, internal network
@@ -127,7 +132,6 @@ Check containerfiles/README.md for more information
 - No permanent data storage
 - Simplified risk calculation
 - No authentication for the service itself
-
 
 ## Some curl examples
 
