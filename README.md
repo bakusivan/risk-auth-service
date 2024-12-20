@@ -71,15 +71,16 @@ pip install -r requirements.txt
 ```bash
 uvicorn src.main:app --reload
 ```
+or you can use containerfiles/risk-auth-service to build and run the service inside container
 
-## Endpoints
+## Endpoints [needs to be updated]
 
 - `POST /log`: Ingest log entries
 - `GET /risk/isuserknown`: Check if a user is known
 - `GET /risk/isipknown`: Verify IP address history
 - `GET /risk/failedlogincountlastweek`: Retrieve failed login attempts
 
-## Risk Assessment Logic
+## Risk Assessment Logic [not applicable]
 
 The service categorizes risk into three levels:
 1. **Low Risk**: Known user, known device, internal network
@@ -114,7 +115,7 @@ Check containerfiles/README.md for more information
 
 ## Future Improvements
 
-- Building an image and running entire service in container mode
+- Building an image and running entire service in container mode [done]
 - Persistent storage integration
 - More granular risk scoring
 - Enhanced logging and monitoring

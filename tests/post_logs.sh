@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -o errexit
+
 curl -X 'POST' \
   'http://127.0.0.1:8000/log/' \
   -H 'Content-Type: application/json' \
