@@ -1,4 +1,3 @@
-# log_collector.py
 from typing import List
 from ..models.models import LogEntry
 

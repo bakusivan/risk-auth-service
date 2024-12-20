@@ -1,4 +1,3 @@
-# main.py
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from datetime import date
@@ -25,7 +24,7 @@ async def create_log(log: LogEntry):
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
 
-@app.get("/logs/")
+@app.get("/logs/also")
 async def get_logs():
     return log_collector.get_logs()
 
