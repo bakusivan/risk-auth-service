@@ -49,7 +49,7 @@ risk-auth-service/
 
 ## Setup and Installation
 
-### For code-build-test-clean-repeat (with podman) process use helper scipts in tests/ directory
+### For code-build-test-clean-repeat (with podman) process, use helper scripts in tests/ directory
 
 1. Clone the repository
 ```bash
