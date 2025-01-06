@@ -24,7 +24,7 @@ async def create_log(log: LogEntry):
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
 
-@app.get("/logs/also")
+@app.get("/logs/")
 async def get_logs():
     return log_collector.get_logs()
 
