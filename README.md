@@ -49,8 +49,6 @@ risk-auth-service/
 
 ## Setup and Installation
 
-### For code-build-test-clean-repeat (with podman) process, use helper scripts in tests/ directory
-
 1. Clone the repository
 ```bash
 git clone <repository-url>
@@ -96,9 +94,15 @@ The service categorizes risk into three levels:
 
 ## Testing
 
-Recommended!
+### Recommended!
 
-Use containerfiles/pytest to run the tests to get isolated environment for testing
+#### For code-build-test-clean-repeat (with podman) process, use helper scripts in tests/ directory
+
+use script tests/build_all_test_and_run_app.sh to run all needed steps at once
+
+OR
+
+Use containerfiles/pytest to run the tests to get isolated containerized environment for testing
 Check containerfiles/README.md for more information
 
 Not recommended!
