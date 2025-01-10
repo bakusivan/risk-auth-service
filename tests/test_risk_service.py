@@ -49,7 +49,7 @@ def test_process_successful_login(risk_service):
     # Verify user risk data
     user_risk = risk_service.get_user_risk("johndoe")
     assert user_risk.is_user_known is True
-    assert user_risk.last_successful_login_date is None  # Not tracked in current implementation
+    assert user_risk.last_successful_login_date == log_data_success.date  # Check that the date matches
 
     # Verify IP and client data remain consistent
     ip_risk = risk_service.get_ip_risk("192.168.1.10")

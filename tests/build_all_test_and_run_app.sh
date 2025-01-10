@@ -47,6 +47,9 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+# 5.1 Let's put one ugly echo since we are not using printf; too late now
+echo ""
+
 # 6. Run podman logs to see if app is running fine
 echo "Running podman logs risk-auth-service to see if app is running"
 podman logs risk-auth-service

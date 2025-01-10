@@ -67,3 +67,25 @@ curl -X 'POST' \
   "date": "2024-12-19T00:00:00",
   "login_success": false
 }'
+
+curl -X 'POST' \
+  'http://127.0.0.1:8000/log/' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "username": "janeZdoe",
+  "device_id": "Zabsdc123",
+  "ip": "192.168.1.110",
+  "date": "2025-01-07T00:00:00",
+  "login_success": true
+}'
+
+curl -X 'POST' \
+  'http://127.0.0.1:8000/log/' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "username": "janeZdoeFail",
+  "device_id": "Zabsdc123",
+  "ip": "192.168.1.110",
+  "date": "2025-01-07T00:00:00",
+  "login_success": false
+}'
